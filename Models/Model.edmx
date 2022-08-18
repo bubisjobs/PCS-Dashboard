@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="bea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="date1" Type="datetime" Mode="In" />
+          <Parameter Name="date2" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="DataCleaningIndicators" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="firstdate" Type="datetime" Mode="In" />
+          <Parameter Name="seconddate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="DataCleaningList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="firstdate" Type="datetime" Mode="In" />
+          <Parameter Name="seconddate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="latitudeLogitudeData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="OverSelectedCluster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="PCS_Cummulative_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="seconddate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="PCS_Dashboard_1_Main" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="firstdate" Type="datetime" Mode="In" />
+          <Parameter Name="seconddate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="PCS_Dashboard_1_Main_Monthly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="PCS_Dashboard_RP_Generation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="firstdate" Type="datetime" Mode="In" />
+          <Parameter Name="seconddate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="PCS_Data_Weekly_Report_1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="firstdate" Type="datetime" Mode="In" />
+          <Parameter Name="seconddate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="PCS_Data_Weekly_Report_No_OfRecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="PCS_Data_Weekly_Report_No.OfRecords">
+          <Parameter Name="firstdate" Type="datetime" Mode="In" />
+          <Parameter Name="seconddate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="PCS_SocialContactCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="enddate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="ViewByCluster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="clusterId" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="ModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="bea" ReturnType="Collection(Model.bea_Result)">
+            <Parameter Name="date1" Mode="In" Type="DateTime" />
+            <Parameter Name="date2" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="DataCleaningIndicators" ReturnType="Collection(Model.DataCleaningIndicators_Result)">
+            <Parameter Name="firstdate" Mode="In" Type="DateTime" />
+            <Parameter Name="seconddate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="DataCleaningList" ReturnType="Collection(Model.DataCleaningList_Result)">
+            <Parameter Name="firstdate" Mode="In" Type="DateTime" />
+            <Parameter Name="seconddate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="latitudeLogitudeData" ReturnType="Collection(Model.latitudeLogitudeData_Result)" />
+          <FunctionImport Name="OverSelectedCluster" ReturnType="Collection(Model.OverSelectedCluster_Result)" />
+          <FunctionImport Name="PCS_Cummulative_Report" ReturnType="Collection(Model.PCS_Cummulative_Report_Result)">
+            <Parameter Name="seconddate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="PCS_Dashboard_1_Main" ReturnType="Collection(Model.PCS_Dashboard_1_Main_Result)">
+            <Parameter Name="firstdate" Mode="In" Type="DateTime" />
+            <Parameter Name="seconddate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="PCS_Dashboard_1_Main_Monthly" ReturnType="Collection(Model.PCS_Dashboard_1_Main_Monthly_Result)" />
+          <FunctionImport Name="PCS_Dashboard_RP_Generation" ReturnType="Collection(Model.PCS_Dashboard_RP_Generation_Result)">
+            <Parameter Name="firstdate" Mode="In" Type="DateTime" />
+            <Parameter Name="seconddate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="PCS_Data_Weekly_Report_1" ReturnType="Collection(Model.PCS_Data_Weekly_Report_1_Result)">
+            <Parameter Name="firstdate" Mode="In" Type="DateTime" />
+            <Parameter Name="seconddate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="PCS_Data_Weekly_Report_No_OfRecords" ReturnType="Collection(Model.PCS_Data_Weekly_Report_No_OfRecords_Result)">
+            <Parameter Name="firstdate" Mode="In" Type="DateTime" />
+            <Parameter Name="seconddate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="PCS_SocialContactCheck" ReturnType="Collection(Model.PCS_SocialContactCheck_Result)">
+            <Parameter Name="enddate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="ViewByCluster" ReturnType="Collection(Model.ViewByCluster_Result)">
+            <Parameter Name="clusterId" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="bea_Result">
+          <Property Type="String" Name="screeningnumber" Nullable="false" MaxLength="255" />
+          <Property Type="DateTime" Name="CDATE" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CNPS" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CSPSHIP" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CFURES" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CCONPAT" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CCONPTSCH" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CONDATA" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CCGIVEN" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CID" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CPERSID" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="CETIME" Nullable="true" Precision="23" />
+          <Property Type="String" Name="agegrp" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="DataCleaningIndicators_Result">
+          <Property Type="String" Name="Query" Nullable="false" MaxLength="164" />
+          <Property Type="Int32" Name="Count_of_Queries" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="DataCleaningList_Result">
+          <Property Type="String" Name="Query" Nullable="false" MaxLength="164" />
+          <Property Type="String" Name="screening_number" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="vcode" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="cpdnum" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="entrydate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="latitudeLogitudeData_Result">
+          <Property Type="Int32" Name="PCS_s" Nullable="true" />
+          <Property Type="Double" Name="cid" Nullable="true" />
+          <Property Type="Double" Name="latitude" Nullable="true" />
+          <Property Type="Double" Name="longitude" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="OverSelectedCluster_Result">
+          <Property Type="String" Name="Query" Nullable="true" MaxLength="543" />
+          <Property Type="String" Name="ClusterID" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="selected" Nullable="true" />
+          <Property Type="Int32" Name="consented" Nullable="true" />
+          <Property Type="Int32" Name="sample_collected" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PCS_Cummulative_Report_Result">
+          <Property Type="String" Name="Indicator" Nullable="false" MaxLength="47" />
+          <Property Type="Int32" Name="data" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PCS_Dashboard_1_Main_Result">
+          <Property Type="Int32" Name="selected" Nullable="true" />
+          <Property Type="Int32" Name="consented" Nullable="true" />
+          <Property Type="Int32" Name="declined_consent" Nullable="true" />
+          <Property Type="Int32" Name="sample_collected" Nullable="true" />
+          <Property Type="Int32" Name="sample_collected_and_received_by_lab" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PCS_Dashboard_1_Main_Monthly_Result">
+          <Property Type="String" Name="YearMonth" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="Month_Name" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Year" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="NumberOfParticipantsSelected" Nullable="true" />
+          <Property Type="Int32" Name="Number_Of_Participants_Consented" Nullable="true" />
+          <Property Type="Int32" Name="Number_Of_SamplesCollected" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PCS_Dashboard_RP_Generation_Result">
+          <Property Type="String" Name="ClusterID" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="agegrp" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="selected" Nullable="true" />
+          <Property Type="Int32" Name="consented" Nullable="true" />
+          <Property Type="Int32" Name="sample_collected" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PCS_Data_Weekly_Report_1_Result">
+          <Property Type="String" Name="ClusterID" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="agegrp" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="selected" Nullable="true" />
+          <Property Type="Int32" Name="consented" Nullable="true" />
+          <Property Type="Int32" Name="sample_collected" Nullable="true" />
+          <Property Type="Int32" Name="sample_collected_and_received_by_lab" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PCS_Data_Weekly_Report_No_OfRecords_Result">
+          <Property Type="String" Name="Form" Nullable="false" MaxLength="41" />
+          <Property Type="Int32" Name="Number_of_Records" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PCS_SocialContactCheck_Result">
+          <Property Type="String" Name="clusterID" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="clustername" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="clustergroup" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="total" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ViewByCluster_Result">
+          <Property Type="String" Name="ClusterID" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CID" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="agegrp" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="vcode" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="cpdnum" Nullable="true" MaxLength="255" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities" >
+          <FunctionImportMapping FunctionImportName="bea" FunctionName="Model.Store.bea">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.bea_Result">
+                <ScalarProperty Name="screeningnumber" ColumnName="screeningnumber" />
+                <ScalarProperty Name="CDATE" ColumnName="CDATE" />
+                <ScalarProperty Name="CNPS" ColumnName="CNPS" />
+                <ScalarProperty Name="CSPSHIP" ColumnName="CSPSHIP" />
+                <ScalarProperty Name="CFURES" ColumnName="CFURES" />
+                <ScalarProperty Name="CCONPAT" ColumnName="CCONPAT" />
+                <ScalarProperty Name="CCONPTSCH" ColumnName="CCONPTSCH" />
+                <ScalarProperty Name="CONDATA" ColumnName="CONDATA" />
+                <ScalarProperty Name="CCGIVEN" ColumnName="CCGIVEN" />
+                <ScalarProperty Name="CID" ColumnName="CID" />
+                <ScalarProperty Name="CPERSID" ColumnName="CPERSID" />
+                <ScalarProperty Name="CETIME" ColumnName="CETIME" />
+                <ScalarProperty Name="agegrp" ColumnName="agegrp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DataCleaningIndicators" FunctionName="Model.Store.DataCleaningIndicators">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.DataCleaningIndicators_Result">
+                <ScalarProperty Name="Query" ColumnName="Query" />
+                <ScalarProperty Name="Count_of_Queries" ColumnName="Count of Queries" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DataCleaningList" FunctionName="Model.Store.DataCleaningList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.DataCleaningList_Result">
+                <ScalarProperty Name="Query" ColumnName="Query" />
+                <ScalarProperty Name="screening_number" ColumnName="screening number" />
+                <ScalarProperty Name="vcode" ColumnName="vcode" />
+                <ScalarProperty Name="cpdnum" ColumnName="cpdnum" />
+                <ScalarProperty Name="entrydate" ColumnName="entrydate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="latitudeLogitudeData" FunctionName="Model.Store.latitudeLogitudeData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.latitudeLogitudeData_Result">
+                <ScalarProperty Name="PCS_s" ColumnName="PCS#s" />
+                <ScalarProperty Name="cid" ColumnName="cid" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="OverSelectedCluster" FunctionName="Model.Store.OverSelectedCluster">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.OverSelectedCluster_Result">
+                <ScalarProperty Name="Query" ColumnName="Query" />
+                <ScalarProperty Name="ClusterID" ColumnName="ClusterID" />
+                <ScalarProperty Name="selected" ColumnName="selected" />
+                <ScalarProperty Name="consented" ColumnName="consented" />
+                <ScalarProperty Name="sample_collected" ColumnName="sample collected" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PCS_Cummulative_Report" FunctionName="Model.Store.PCS_Cummulative_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.PCS_Cummulative_Report_Result">
+                <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+                <ScalarProperty Name="data" ColumnName="data" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PCS_Dashboard_1_Main" FunctionName="Model.Store.PCS_Dashboard_1_Main">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.PCS_Dashboard_1_Main_Result">
+                <ScalarProperty Name="selected" ColumnName="selected" />
+                <ScalarProperty Name="consented" ColumnName="consented" />
+                <ScalarProperty Name="declined_consent" ColumnName="declined consent" />
+                <ScalarProperty Name="sample_collected" ColumnName="sample collected" />
+                <ScalarProperty Name="sample_collected_and_received_by_lab" ColumnName="sample collected and received by lab" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PCS_Dashboard_1_Main_Monthly" FunctionName="Model.Store.PCS_Dashboard_1_Main_Monthly">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.PCS_Dashboard_1_Main_Monthly_Result">
+                <ScalarProperty Name="YearMonth" ColumnName="YearMonth" />
+                <ScalarProperty Name="Month_Name" ColumnName="Month Name" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="NumberOfParticipantsSelected" ColumnName="NumberOfParticipantsSelected" />
+                <ScalarProperty Name="Number_Of_Participants_Consented" ColumnName="Number Of Participants Consented" />
+                <ScalarProperty Name="Number_Of_SamplesCollected" ColumnName="Number Of SamplesCollected" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PCS_Dashboard_RP_Generation" FunctionName="Model.Store.PCS_Dashboard_RP_Generation">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.PCS_Dashboard_RP_Generation_Result">
+                <ScalarProperty Name="ClusterID" ColumnName="ClusterID" />
+                <ScalarProperty Name="agegrp" ColumnName="agegrp" />
+                <ScalarProperty Name="selected" ColumnName="selected" />
+                <ScalarProperty Name="consented" ColumnName="consented" />
+                <ScalarProperty Name="sample_collected" ColumnName="sample collected" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PCS_Data_Weekly_Report_1" FunctionName="Model.Store.PCS_Data_Weekly_Report_1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.PCS_Data_Weekly_Report_1_Result">
+                <ScalarProperty Name="ClusterID" ColumnName="ClusterID" />
+                <ScalarProperty Name="agegrp" ColumnName="agegrp" />
+                <ScalarProperty Name="selected" ColumnName="selected" />
+                <ScalarProperty Name="consented" ColumnName="consented" />
+                <ScalarProperty Name="sample_collected" ColumnName="sample collected" />
+                <ScalarProperty Name="sample_collected_and_received_by_lab" ColumnName="sample collected and received by lab" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PCS_Data_Weekly_Report_No_OfRecords" FunctionName="Model.Store.PCS_Data_Weekly_Report_No_OfRecords">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.PCS_Data_Weekly_Report_No_OfRecords_Result">
+                <ScalarProperty Name="Form" ColumnName="Form" />
+                <ScalarProperty Name="Number_of_Records" ColumnName="Number of Records" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PCS_SocialContactCheck" FunctionName="Model.Store.PCS_SocialContactCheck">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.PCS_SocialContactCheck_Result">
+                <ScalarProperty Name="clusterID" ColumnName="clusterID" />
+                <ScalarProperty Name="clustername" ColumnName="clustername" />
+                <ScalarProperty Name="clustergroup" ColumnName="clustergroup" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ViewByCluster" FunctionName="Model.Store.ViewByCluster">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.ViewByCluster_Result">
+                <ScalarProperty Name="ClusterID" ColumnName="ClusterID" />
+                <ScalarProperty Name="CID" ColumnName="CID" />
+                <ScalarProperty Name="agegrp" ColumnName="agegrp" />
+                <ScalarProperty Name="vcode" ColumnName="vcode" />
+                <ScalarProperty Name="cpdnum" ColumnName="cpdnum" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
